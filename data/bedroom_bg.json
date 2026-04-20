@@ -1,0 +1,42 @@
+{ "frames": [
+   {
+    "filename": "bedroom_bg 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 254, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 254, "h": 108 },
+    "sourceSize": { "w": 254, "h": 108 },
+    "duration": 100
+   },
+   {
+    "filename": "bedroom_bg 1.aseprite",
+    "frame": { "x": 254, "y": 0, "w": 254, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 254, "h": 108 },
+    "sourceSize": { "w": 254, "h": 108 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.8.1-x64",
+  "image": "bedroom_bg.png",
+  "format": "RGBA8888",
+  "size": { "w": 508, "h": 108 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "dark", "from": 0, "to": 0, "direction": "forward", "color": "#000000ff" },
+   { "name": "bathroom_light_on", "from": 1, "to": 1, "direction": "forward", "color": "#000000ff" }
+  ],
+  "layers": [
+   { "name": "bg", "opacity": 255, "blendMode": "normal" },
+   { "name": "lighting" },
+   { "name": "gg", "group": "lighting", "opacity": 255, "blendMode": "color_dodge" },
+   { "name": "darkness", "group": "lighting", "opacity": 125, "blendMode": "darken" },
+   { "name": "light", "group": "lighting", "opacity": 255, "blendMode": "color_dodge" }
+  ],
+  "slices": [
+  ]
+ }
+}

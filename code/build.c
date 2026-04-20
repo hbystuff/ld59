@@ -1,0 +1,8 @@
+#include "hby_lib/hby.h"
+#include "game.c"
+#include "assets.c"
+#include "notes.c"
+#include "entity.c"
+#include "rules.c"
+#include "sequence.c"
+#include "hby_lib/hby.c"

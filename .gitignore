@@ -1,0 +1,7 @@
+*.js
+*.wasm
+*.exe
+*.ilk
+*.pdb
+*.obj
+*.zip

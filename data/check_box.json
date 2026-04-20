@@ -1,0 +1,65 @@
+{ "frames": [
+   {
+    "filename": "check_box 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 15, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 14 },
+    "sourceSize": { "w": 15, "h": 14 },
+    "duration": 100
+   },
+   {
+    "filename": "check_box 1.aseprite",
+    "frame": { "x": 15, "y": 0, "w": 15, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 14 },
+    "sourceSize": { "w": 15, "h": 14 },
+    "duration": 100
+   },
+   {
+    "filename": "check_box 2.aseprite",
+    "frame": { "x": 30, "y": 0, "w": 15, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 14 },
+    "sourceSize": { "w": 15, "h": 14 },
+    "duration": 100
+   },
+   {
+    "filename": "check_box 3.aseprite",
+    "frame": { "x": 45, "y": 0, "w": 15, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 14 },
+    "sourceSize": { "w": 15, "h": 14 },
+    "duration": 100
+   },
+   {
+    "filename": "check_box 4.aseprite",
+    "frame": { "x": 60, "y": 0, "w": 15, "h": 14 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 14 },
+    "sourceSize": { "w": 15, "h": 14 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.8.1-x64",
+  "image": "check_box.png",
+  "format": "RGBA8888",
+  "size": { "w": 75, "h": 14 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "tick", "from": 0, "to": 4, "direction": "forward", "color": "#000000ff" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 2", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

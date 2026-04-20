@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ld59</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #111; height: 100%; overflow: hidden; color: #ddd; font-family: system-ui, sans-serif; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { background: #000; display: block; }
+  #unsupported { max-width: 40em; padding: 2em; text-align: center; line-height: 1.5; }
+  #unsupported h1 { color: #f66; margin-top: 0; }
+  #unsupported code { background: #222; padding: 0 0.3em; border-radius: 3px; }
+</style>
+</head>
+<body>
+<canvas id="canvas" width="960" height="540" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+<div id="unsupported" style="display:none"></div>
+<script>
+  (function() {
+
+    function supports_wasm() {
+      return typeof WebAssembly == 'object' && typeof WebAssembly.instantiate == 'function';
+    }
+    function supports_webgl2() {
+      var gl = null;
+      try {
+        var probe = document.createElement('canvas');
+        gl = probe.getContext('webgl2');
+      } catch (e) {}
+      return !!gl;
+    }
+
+    var missing = [];
+    if (!supports_wasm()) {
+      missing.push('WebAssembly');
+    }
+    if (!supports_webgl2()) {
+      missing.push('WebGL 2');
+    }
+
+    if (missing.length) {
+      document.getElementById('canvas').style.display = 'none';
+      var elem = document.getElementById('unsupported');
+      elem.style.display = 'block';
+      elem.innerHTML =
+        "<h1>Browser not supported</h1>" +
+        "<p>This game needs <b>" + missing.join("</b> and <b>") + "</b>, which your browser doesn\'t provide.</p>" +
+        "<p>Try a recent version of Firefox, Chrome, Edge, or Safari. " +
+        "On iOS, WebGL 2 requires iOS 15+.</p>";
+      return;
+    }
+
+    window.Module = {
+      canvas: document.getElementById('canvas'),
+      print: function(t) { console.log(t); },
+      printErr: function(t) { console.error(t); },
+    };
+    var s = document.createElement('script');
+    s.src = 'program.js';
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>
