@@ -11,6 +11,7 @@ data/audio/ld59_fluorescent_light.wav
 data/audio/ld59_interaction.wav
 data/audio/ld59_light_switch_1.wav
 data/audio/ld59_light_switch_2.wav
+data/audio/ld59_outro_music.wav
 data/audio/ld59_tv_hit.wav
 data/audio/ld59_tv_static.wav
 data/audio/ld59_tv_test_screen.wav

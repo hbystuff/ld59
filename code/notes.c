@@ -147,6 +147,22 @@ void draw_note_screen(float dt) {
     gfx_pop();
   }
 
+  if (alpha && note_can_control) {
+    gfx_push();
+    const char *instructions[] = {
+      "<#ffff00>[Z]<> Exit",
+    };
+    for (int i = 0; i < _countof(instructions); i++) {
+      Gfx_Text_Ex ex = {0};
+      ex.bordered = true;
+      float p = 2;
+      float h = gfx_get_text_height();
+      gfx_set_color(1,1,1,alpha);
+      gfx_text_ex(instructions[i], 0+p, HEIGHT - (p + (h+p) * (i+1)), ex);
+    }
+    gfx_pop();
+  }
+
   if (the_game.misc.view_note) {
     if (app_keypress(KEY_Z) && note_can_control)
     {

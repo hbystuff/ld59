@@ -316,29 +316,57 @@ SEQUENCE_PROC(sp_use_cat_dish_without_catfood) {
   if (the_game.misc.cur_day <= DAY_1) {
     s_say(s, "A cat bowl...");
     s_say(s, "I need to go find the <#ffaacc>cat food<> first.");
-  } else {
+  } else if (the_game.misc.cur_day == DAY_2) {
     s_say(s, "Looks like the cat ate th food!");
     s_say(s, "Let's go find some more <#ffaacc>cat food<>.");
+  } else if (the_game.misc.cur_day == DAY_3) {
+    s_say(s, "Someone's been hungry.");
+    s_say(s, "I wish I get to see the cat though...");
+  } else if (the_game.misc.cur_day >= DAY_4) {
+    s_say(s, "...");
+  } else if (the_game.misc.cur_day >= DAY_5) {
+    s_say(s, "......");
+  } else if (the_game.misc.cur_day >= DAY_6) {
+    s_say(s, ".........");
+  } else {
+    s_say(s, "............");
+  }
+}
+SEQUENCE_PROC(sp_interact_with_full_cat_dish) {
+  s_lock(s);
+  if (the_game.misc.cur_day <= DAY_3) {
+    s_say(s, "Enjoy your meal, kitty.");
+  } else {
+    s_say(s, "...");
+  }
+}
+SEQUENCE_PROC(sp_use_cat_food) {
+  s_lock(s);
+  if (s_inst(s)) {
+    the_game.misc.used_catfood = true;
+    aud_play_oneshot("data/audio/ld59_interaction.wav", 0.6);
+    s_next(s);
+  }
+  if (the_game.misc.cur_day == DAY_1) {
+    s_say(s, "There you go, kitty.");
+  } else if (the_game.misc.cur_day == DAY_2) {
+    s_say(s, "Hope you're hungry, kitty.");
+  } else if (the_game.misc.cur_day == DAY_3) {
+    s_say(s, "Here kitty kitty...");
+  } else if (the_game.misc.cur_day >= DAY_4) {
+    s_say(s, "...");
+  } else if (the_game.misc.cur_day >= DAY_5) {
+    s_say(s, "......");
+  } else if (the_game.misc.cur_day >= DAY_6) {
+    s_say(s, ".........");
+  } else {
+    s_say(s, "............");
   }
 }
 
 SEQUENCE_PROC(sp_picked_up_cat_food) {
   s_lock(s);
   s_say(s, "Found the <#ffaacc>cat food<>.");
-}
-
-SEQUENCE_PROC(sp_use_cat_food) {
-  s_lock(s);
-  if (s_inst(s)) {
-    the_game.misc.used_catfood = true;
-    s_next(s);
-  }
-  s_say(s, "There you go.");
-}
-
-SEQUENCE_PROC(sp_interact_with_full_cat_dish) {
-  s_lock(s);
-  s_say(s, "Enjoy your meal, kitty.");
 }
 
 SEQUENCE_PROC(sp_use_front_door_when_not_ready_to_leave) {

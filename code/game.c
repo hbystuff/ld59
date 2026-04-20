@@ -64,6 +64,7 @@ static SEQUENCE_PROC(sp_ending_1) {
     move_to(&player_en->opacity, 0, dt / 0.5);
     if (player_en->opacity <= 0) {
       s_next(s);
+      aud_play_oneshot("data/audio/ld59_outro_music.wav", 0.9);
     }
   }
   // TODO: Start ending 1 music here
@@ -980,6 +981,24 @@ void draw_tv_closeup(float dt) {
     gfx_push();
     gfx_set_color(1,1,1, alpha);
     gfx_draw(gfx_get_canvas_texture(the_game.closeup_canvas), 0, 0);
+    gfx_pop();
+  }
+
+  if (alpha && can_control_tv) {
+    gfx_push();
+    const char *instructions[] = {
+      "<#ffff00>[Z]<> Exit",
+      "<#ffff00>[DOWN]<> -channel",
+      "<#ffff00>[UP]<> +channel",
+    };
+    for (int i = 0; i < _countof(instructions); i++) {
+      Gfx_Text_Ex ex = {0};
+      ex.bordered = true;
+      float p = 2;
+      float h = gfx_get_text_height();
+      gfx_set_color(1,1,1,alpha);
+      gfx_text_ex(instructions[i], 0+p, HEIGHT - (p + (h+p) * (i+1)), ex);
+    }
     gfx_pop();
   }
 
